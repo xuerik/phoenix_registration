@@ -82,7 +82,7 @@ passport.deserializeUser(function(id, done) {
 
 var app = express();
 // Connect to MongoDB database.
-mongoose.connect('localhost');
+mongoose.connect('mongodb://heroku_4nllv41c:k76l6aqj61mgq4rcje3u0prrbo@ds061405.mongolab.com:61405/heroku_4nllv41c');
 
 
 // Middleware
