@@ -1,0 +1,29 @@
+//
+   Created by erikxu on 2/16/16.
+
+extends layout
+
+block content
+    form(method='POST')
+        legend Add Employees
+        .form-group
+            label(for='name') Name
+            input.form-control(type='text', name='name', autofocus)
+        .form-group
+            label(for='email') Email
+            input.form-control(type='text', name='email', autofocus)
+        .form-group
+            label(for='phonenumber') Phone Number
+            input.form-control(type='text', name='phonenumber', autofocus)
+
+
+        button.btn.btn-primary(type='submit') + Add Employee
+
+        <br>
+        <br>
+        <br>
+        <a href="/">Skip All</a>
+        button.btn.btn-primary(type='submit') Next
+
+        <br>
+        <a href="/">Cancel</a> <br>

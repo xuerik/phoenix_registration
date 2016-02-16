@@ -1,0 +1,25 @@
+//
+   Created by erikxu on 2/16/16.
+
+extends layout
+
+block content
+    form(method='POST')
+        legend Create Your Company
+        .form-group
+            label(for='companyname') Company Name
+            input.form-control(type='text', name='companyname', autofocus)
+        .form-group
+            label(for='companyemail') Company Email
+            input.form-control(type='text', name='companyemail', autofocus)
+        .form-group
+            label(for='companyphonenumber') Company Phone Number
+            input.form-control(type='text', name='companyphonenumber', autofocus)
+
+        <p> Select the type of business you are creating: </p>
+        <input type="checkbox" name="business" value="health"> Healthcare <br>
+        <input type="checkbox" name="business" value="fitness"> Fitness/Spa <br>
+        <input type="checkbox" name="business" value="other"> Other <br><br>
+
+        <a href="/">Cancel</a>
+        button.btn.btn-primary(type='submit') Next

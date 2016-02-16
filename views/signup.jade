@@ -3,19 +3,28 @@
 
 extends layout
 
+//style
+//    include signup.css
+
 block content
     form(method='POST')
-        legend Signup
+        legend Start A New Account
         .form-group
-            label(for='username') Username
-            input.form-control(type='text', name='username', autofocus)
+            label(for='firstname') First Name
+            input.form-control(type='text', name='firstname', autofocus)
         .form-group
-            label(for='email') Email
-            input.form-control(type='text', name='email')
+            label(for='lastname') Last Name
+            input.form-control(type='text', name='lastname', autofocus)
         .form-group
             label(for='password') Password
             input.form-control(type='password', name='password')
         .form-group
             label(for='confirm') Confirm Password
             input.form-control(type='password', name='confirm')
-        button.btn.btn-primary(type='submit') Signup
+
+        button.btn.btn-primary(type='submit') Create Account
+
+    <br>
+    <a href="/">Cancel</a>
+    <a href="/login">Log In</a>
+

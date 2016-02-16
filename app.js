@@ -21,6 +21,8 @@ var userSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    firstname: { type: String, required: true, unique: false},
+    lastname: { type: String, required: true, unique: false},
     resetPasswordToken: String,
     resetPasswordExpires: Date
 });
@@ -137,8 +139,6 @@ app.get('/signup', function(req, res) {
 
 app.post('/signup', function(req, res) {
     var user = new User({
-        username: req.body.username,
-        email: req.body.email,
         password: req.body.password
     });
 
@@ -146,6 +146,57 @@ app.post('/signup', function(req, res) {
         req.logIn(user, function(err) {
             res.redirect('/');
         });
+    });
+});
+
+app.get('/createcompany', function(req, res) {
+    res.render('createcompany', {
+        user: req.user
+    });
+});
+
+app.post('/createcompany', function(req, res) {
+    var user = new User({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    });
+
+    user.save(function (err) {
+        req.logIn(user, function (err) {
+            res.redirect('/');
+        });
+    });
+});
+
+app.get('/visitorform', function(req, res) {
+    res.render('visitorform', {
+        user: req.user
+    });
+});
+
+app.get('/theme', function(req, res) {
+    res.render('theme', {
+        user: req.user
+    });
+});
+
+app.get('/logo.jpg', function(req, res) {
+    res.render('logo.jpg', {
+        user: req.user
+    });
+});
+
+app.get('/theme', function(req, res) {
+    res.render('theme', {
+        user: req.user
+    });
+});
+
+
+app.get('/employees', function(req, res) {
+    res.render('employees', {
+        user: req.user
     });
 });
 
